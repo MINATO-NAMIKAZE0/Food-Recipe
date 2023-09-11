@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasty Taste</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <style>
+   
+
+    body {
+      background-image: url('./assets/hBack.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      color: rgb(0, 0, 0);
+    }
+
+    
+    .logo {
+      width: 75px;
+      height: 75px;
+      margin: 30px;
+    }
+
+
+    .header1 {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin-top: -20px;
+    }
+
+    
+
+    .navbar .logo a {
+      
+      font-size: 1.8rem;
+      text-decoration: none;
+      color: #fff;
+     
+    }
+
+    .navbar .links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 35px;
+      margin-top: -20px;;
+      float: right;
+      color: #f2f2f2;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      padding-right: 100px;
+      width: 150px;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .navbar .links a {
+      font-weight: 500;
+      text-decoration:underline;
+      color: #fff;
+      padding: 0px 50px;
+      transition: 1s all;
+    }
+
+    .navbar .links a:hover {
+      color: black;
+      font-weight: bold;
+      transition: all 1s;
+    }
+
+    .navbar .buttons a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 15px 0;
+      transition: 0.2s ease;
+    }
+
+    .navbar .buttons a:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    .navbar .buttons .signin:hover {
+      color: #47b2e4;
+    }
+
+    .navbar .buttons .signup {
+      border: 1px solid #fff;
+      padding: 10px 20px;
+      border-radius: 0.375rem;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .navbar .buttons .signup:hover {
+      background-color: #47b2e4;
+      color: #fff;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    #hamburger-btn {
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      order: 1;
+    }
+
+    @media screen and (max-width: 1023px) {
+      .navbar .logo a {
+        font-size: 1.5rem;
+      }
+
+      .links {
+        position: fixed;
+        left: -100%;
+        top: 75px;
+        width: 100%;
+        height: 100vh;
+        padding-top: 50px;
+        background: #175d69;
+        flex-direction: column;
+        transition: 0.3s ease;
+      }
+
+      .navbar #menu-toggle:checked~.links {
+        left: 0;
+      }
+
+      .navbar #hamburger-btn {
+        display: block;
+      }
+
+      .header .buttons {
+        display: none;
+      }
+
+    }
+
+    #Intro {
+      color: white;
+      font-size: 80px;
+      text-align: left;
+      padding: 75px 25px 50px 150px;
+    }
+
+    br {
+      padding-left: 20px;
+    }
+
+    span {
+      font-size: 20px;
+      margin-left: 10px;
+
+    }
+
+    .boy {
+      background-color: aliceblue;
+      padding: 50px 0;
+    }
+
+    .main {
+      background-image: url('./assets/back.jpg');
+      color: white;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 50px 0;
+    }
+
+    .center {
+      background-color: rgb(223, 235, 235);
+      padding: 100px;
+    }
+
+    .center h1 {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .center button {
+      width: 200px;
+      height: 70px;
+      font-size: 20px;
+      border: 2px solid #6b6666;
+      background-color: #6b6666;
+    }
+
+    .center button:hover {
+      color: white;
+      font-weight: bold;
+      border: 2px solid azure;
+      background-color: black;
+      transition: all 1s;
+    }
+
+
+    .center1 {
+      overflow: hidden;
+    }
+
+    .center2 {
+      overflow: hidden;
+      margin-top: 150px
+    }
+
+    .image {
+      float: right;
+      width: 500px;
+      height: 450px;
+    }
+
+    .image1 {
+      float: left;
+      width: 600px;
+      height: 450px;
+    }
+
+    .c2 {
+      width: auto;
+      padding-left: 700px;
+    }
+
+    .centered {
+      overflow: hidden;
+      padding-top: 100px;
+      height: 400px;
+      align-items: center;
+      text-align: center;
+      background-color: beige;
+      font-size: 20px;
+    }
+
+    .body_center {
+      background-image: url('./assets/lback.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      color: rgb(255, 255, 255);
+      padding-top: 50px;
+      height: 800px;
+      align-items: center;
+      text-align: center;
+      font-size: 20px;
+      padding-top: 300px;
+    }
+
+    .body_center button {
+      width: 200px;
+      height: 70px;
+      font-size: 20px;
+      border: 2px solid #ffffff;
+      background-color: #ffffff;
+    }
+
+    .body_center button:hover {
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      background-color: black;
+      transition: all 1s;
+    }
+
+
+
+    /* ---------------------------form------------------------------- */
+    .jai {
+      background: linear-gradient(300deg, #ff5b45, #ff8d8d, #6fd5f7);
+      background-size: 180% 180%;
+      animation: gradient-animation 18s ease infinite;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+
+      padding-top: 45px;
+      padding-bottom: 45px;
+    }
+
+    .container {
+      overflow: hidden;
+      display: flex;
+
+      height: 500px;
+    }
+
+    .left {
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      animation-name: left;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-delay: 1s;
+    }
+
+    .right {
+      flex: 1;
+      background-color: black;
+      transition: 1s;
+      background-image: url(https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+
+    .header>h2 {
+      margin: 0;
+      color: #4f46a5;
+    }
+
+    .header>h4 {
+      margin-top: 10px;
+      font-weight: normal;
+      font-size: 15px;
+      color: rgba(0, 0, 0, .4);
+    }
+
+    .form {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form>p {
+      text-align: right;
+    }
+
+    .form>p>a {
+      color: #000;
+      font-size: 14px;
+    }
+
+    .form-field {
+      height: 46px;
+      padding: 0 16px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Rubik', sans-serif;
+      outline: 0;
+      transition: .2s;
+      margin-top: 20px;
+    }
+
+    .form-field:focus {
+      border-color: #0f7ef1;
+    }
+
+    .form>button {
+      padding: 12px 10px;
+      border: 0;
+      background: linear-gradient(to right, #de48b5 0%, #0097ff 100%);
+      border-radius: 3px;
+      margin-top: 10px;
+      color: #fff;
+      letter-spacing: 1px;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    .animation {
+      animation-name: move;
+      animation-duration: .4s;
+      animation-fill-mode: both;
+      animation-delay: 2s;
+    }
+
+    .a1 {
+      animation-delay: 2s;
+    }
+
+    .a2 {
+      animation-delay: 2.1s;
+    }
+
+    .a3 {
+      animation-delay: 2.2s;
+    }
+
+    .a4 {
+      animation-delay: 2.3s;
+    }
+
+    .a5 {
+      animation-delay: 2.4s;
+    }
+
+    .a6 {
+      animation-delay: 2.5s;
+    }
+
+    @keyframes move {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-40px);
+      }
+
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes left {
+      0% {
+        opacity: 0;
+        width: 0;
+      }
+
+      100% {
+        opacity: 1;
+        padding: 20px 40px;
+        width: 440px;
+      }
+    }
+
+
+    /* ----------------------------------------------------resposive-------------- */
+    @media (max-width: 768px) {
+      .topnav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .topnav a {
+        padding: 10px;
+        width: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #Intro {
+        text-align: center;
+        padding: 50px 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .center1,
+      .center2 {
+        text-align: center;
+      }
+
+      .image,
+      .image1 {
+        width: 100%;
+        height: auto;
+        float: none;
+      }
+
+      .center1 .c1,
+      .center2 .c2 {
+        padding: 0;
+      }
+
+      .center1 button,
+      .center2 button {
+        width: 100%;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .centered h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .body_center {
+        padding-top: 100px;
+        padding-bottom: 50px;
+        /* Adjust as needed */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .right {
+        background-image: none;
+      }
+
+      .form-field {
+        width: 100%;
+      }
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- ------------------------------NAVBAR------------------------------------ -->
+
+  <header class="header1">
+    <nav class="navbar">
+      <img class="logo" src="./assets/icon.jpg" alt="icon">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" id="hamburger-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </label>
+      <ul class="links">
+        <a href="https://recipes.timesofindia.com/">Recipes</a>
+        <a href="https://www.allrecipes.com/recipes/17567/ingredients/">Ingredients</a>
+        <a href="https://www.betterhealth.vic.gov.au/health/healthyliving/healthy-cooking-tips">Tips</a>
+        <a href="#contact" id="contact">Contact</a>
+       
+        
+        
+      </ul>
+
+    </nav>
+  </header>
+
+
+
+  <div id="Intro">
+    <div class="intro">
+      <p>
+        Discover Delicious <br>Recipe For Every <br>Occasion.<br><span>Let Eat Today</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- -------------------------------------- -->
+
+
+  <div class="center">
+    <div class="center1">
+
+      <img class="image" src="./assets/rimage.jpg" alt="">
+      <div class="c1">
+        <h1>Explore a Variety of <br>Mouth- <br> watering Dishes</h1><br>
+        <p style="font-size: 20px;">From appetizers to desserts, our collection of recipes offers something <br>for
+          everyone. Whether you're a beginner or an experienced cook, we <br>have easy-to-follow recipes that will help
+          you create delicious meals <br>in no time.</p><br>
+        <button>Try yourself</button>
+      </div>
+    </div>
+
+    <div class="center2">
+
+      <img class="image1" src="./assets/limage.jpg" alt="">
+      <div class="c2">
+        <h1>Discover New Flavors</h1><br>
+        <p style="font-size: 20px;">Expand your culinary horizons with our diverse range of recipes <br> featuring
+          international cuisines, unique flavor combinations, and <br>innovative cooking techniques. Our recipes are
+          designed to inspire <br> you to get creative in the kitchen.</p><br>
+        <button>Try yourself</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ----------------------------------------------------- -->
+
+  <div class="centered">
+    <h1 style="font-size: 50px;">Delicious recipes that taste <br> amazing!</h1><br>
+    <p>- Abhishek Kumar Pandey</p>
+  </div>
+
+
+
+
+  <!-- ------------------------------------------------------------- -->
+
+  <div class="body_center">
+    <h1 style="font-size: 60px;">Unlock the Chef Within</h1><br>
+    <p>Learn insider tips and techniques from professional chefs and home cooks. <br> Discover the secrets to cooking
+      with fresh ingredients, pairing flavors, and mastering <br>cooking methods to take your culinary skills to the
+      next level.</p>
+    <br>
+
+    <button>Start Cooking</button>
+  </div>
+
+
+
+  <!-- -----------------------------------footer------------------------ -->
+
+  <div class="jai">
+    <div class="container">
+      <div class="left">
+        <div class="header">
+          <h2 class="animation a1">Contact </h2>
+          <h4 class="animation a2">Hi there! please enter the details to contact me</h4>
+        </div>
+        <div class="form">
+          <input type="text" class="form-field animation a3" placeholder="Name">
+          <input type="email" class="form-field animation a3" placeholder="Email Address">
+          <input type="text" class="form-field animation a3" placeholder="Phone No.">
+
+          <button class="animation a6" type="submit">Submit</button>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
